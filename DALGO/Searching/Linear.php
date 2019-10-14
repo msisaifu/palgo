@@ -1,7 +1,7 @@
 <?php
 namespace Searching;
 
-class LinearAlgo{
+class Linear{
   private $size;
   private $element;
 
