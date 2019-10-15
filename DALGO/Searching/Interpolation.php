@@ -13,9 +13,10 @@ class Interpolation{
     $this->size = sizeof($collection);
 
     $first = 0;
+    $position = 0;
     $last = $this->size - 1;
 
-    while($first <= $last){
+    while($first <= $last && $this->element >= $collection[$first] && $this->element <= $collection[$last]){
       $position =(int) ($first + ((($last-$first)/($collection[$last] - $collection[$first])) * ($this->element-$collection[$first])));
 
       if($collection[$position] == $this->element)
