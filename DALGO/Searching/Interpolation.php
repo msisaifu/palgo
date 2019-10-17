@@ -10,7 +10,7 @@ class Interpolation{
   }
 
   public function isExist(iterable  $collection, $pos = false): int{
-    $this->size = sizeof($collection);
+    $this->size = sizeof($collection) - 1;
 
     $first = 0;
     $position = 0;

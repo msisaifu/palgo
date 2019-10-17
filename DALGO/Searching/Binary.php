@@ -9,21 +9,21 @@ class Binary{
     $this->element = $element;
   }
 
-  public function isExist(iterable  $collection): int{
-    $this->size = sizeof($collection);
+  public function isExist(iterable  $collection, $pos = false): int{
+    $this->size = sizeof($collection) - 1;
 
     $first = 0;
     $last = $this->size - 1;
     $middle = ($first+$last)/2;
 
     while($first <= $last){
-      if($collection[$middle] < $this->element){
+      
+      if($collection[$middle] == $this->element)
+        return $pos ? $middle : 1;
+      elseif($collection[$middle] < $this->element)
         $first = $middle + 1;
-      }elseif($collection[$middle] == $this->element){
-        return 1;
-      }else{
+      else
         $last = $middle -1;
-      }
 
       $middle = ($first+$last)/2;
     }

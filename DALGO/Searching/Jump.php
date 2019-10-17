@@ -10,12 +10,12 @@ class Jump{
   }
 
   public function isExist(iterable  $collection, $pos = false): int{
-    $this->size = sizeof($collection);
+    $this->size = sizeof($collection) - 1;
 
     $first = 0;
     $last = sqrt($this->size);
 
-    while(isset($collection[$last]) && $collection[$last] <= $this->element && $last < $this->size){
+    while($collection[$last] <= $this->element && $last < $this->size){
       $first = $last;
       $last +=  sqrt($this->size);
       if($last > $this->size - 1 )
